@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LockScreenMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,55 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tNJ-fV-hvA">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JGf-Km-g00" appends="YES" id="7Fu-mj-Wbv"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-uS-RhX">
+                                <rect key="frame" x="0.0" y="75" width="600" height="450"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Efl-uS-RhX" secondAttribute="height" multiplier="4:3" id="hM6-Cw-EsG"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="WLX-5Z-fcq" appends="YES" id="wca-Tg-PBm"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Efl-uS-RhX" secondAttribute="trailing" id="8Jr-u5-dOR"/>
+                            <constraint firstItem="tNJ-fV-hvA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Qvx-bl-Io5"/>
+                            <constraint firstAttribute="trailing" secondItem="tNJ-fV-hvA" secondAttribute="trailing" id="RV5-Nu-oj8"/>
+                            <constraint firstItem="tNJ-fV-hvA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XKL-1K-QGk"/>
+                            <constraint firstItem="Efl-uS-RhX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ruw-qs-TKS"/>
+                            <constraint firstItem="Efl-uS-RhX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xIr-nA-aWe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tNJ-fV-hvA" secondAttribute="bottom" id="ygH-9y-kyu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageVIew" destination="tNJ-fV-hvA" id="moP-ik-L4n"/>
+                        <outlet property="foregroudImageView" destination="Efl-uS-RhX" id="uRp-3f-sB8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WLX-5Z-fcq">
+                    <connections>
+                        <action selector="didTapForegroundImageView:" destination="BYZ-38-t0r" id="68U-lW-Icj"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="JGf-Km-g00">
+                    <connections>
+                        <action selector="didTapBackgroundImageView:" destination="BYZ-38-t0r" id="h3l-ak-3ea"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="885" y="670"/>
         </scene>
     </scenes>
 </document>
