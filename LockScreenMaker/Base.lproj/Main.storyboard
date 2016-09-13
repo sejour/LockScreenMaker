@@ -20,10 +20,19 @@
                             <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tNJ-fV-hvA">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="JGf-Km-g00" appends="YES" id="7Fu-mj-Wbv"/>
-                                </connections>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4v-68-z13">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="45i-jD-XTY">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="iXm-A3-W0U" appends="YES" id="Yko-XS-T5D"/>
+                                    </connections>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-uS-RhX">
                                 <rect key="frame" x="0.0" y="75" width="600" height="450"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,12 +47,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="I4v-68-z13" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6Hg-HJ-QkW"/>
                             <constraint firstAttribute="trailing" secondItem="Efl-uS-RhX" secondAttribute="trailing" id="8Jr-u5-dOR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="I4v-68-z13" secondAttribute="bottom" id="9OO-8r-lOg"/>
+                            <constraint firstItem="I4v-68-z13" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EB3-xd-aW4"/>
+                            <constraint firstItem="tNJ-fV-hvA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N39-Yu-pTN"/>
                             <constraint firstItem="tNJ-fV-hvA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Qvx-bl-Io5"/>
                             <constraint firstAttribute="trailing" secondItem="tNJ-fV-hvA" secondAttribute="trailing" id="RV5-Nu-oj8"/>
+                            <constraint firstItem="tNJ-fV-hvA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Rwg-Q9-iNV"/>
                             <constraint firstItem="tNJ-fV-hvA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XKL-1K-QGk"/>
+                            <constraint firstAttribute="trailing" secondItem="tNJ-fV-hvA" secondAttribute="trailing" id="dbg-9x-NUi"/>
                             <constraint firstItem="Efl-uS-RhX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ruw-qs-TKS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tNJ-fV-hvA" secondAttribute="bottom" id="tW1-fE-yjk"/>
                             <constraint firstItem="Efl-uS-RhX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xIr-nA-aWe"/>
+                            <constraint firstAttribute="trailing" secondItem="I4v-68-z13" secondAttribute="trailing" id="xTI-Fz-A6y"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tNJ-fV-hvA" secondAttribute="bottom" id="ygH-9y-kyu"/>
                         </constraints>
                     </view>
@@ -58,9 +75,9 @@
                         <action selector="didTapForegroundImageView:" destination="BYZ-38-t0r" id="68U-lW-Icj"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="JGf-Km-g00">
+                <tapGestureRecognizer id="iXm-A3-W0U">
                     <connections>
-                        <action selector="didTapBackgroundImageView:" destination="BYZ-38-t0r" id="h3l-ak-3ea"/>
+                        <action selector="didTapBackgroundImageView:" destination="BYZ-38-t0r" id="Gts-fs-6Jc"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
